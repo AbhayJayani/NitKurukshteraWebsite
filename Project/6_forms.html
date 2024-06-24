@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Forms</title>
+    <style>
+        body
+        {
+            background-image: url('back15.jpg');
+           
+           background-size: 100% 700px;
+           background-attachment: fixed;
+        }
+        .home
+        {
+            display: flex;
+        }
+        .home>div
+        {
+            border: 3px solid white;
+            border-radius: 10px;
+            margin: 5px;
+            padding: 5px 30px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+        .home>div:hover
+        {
+            background-color: rgb(0, 135, 245);
+        }
+        h1
+        {
+            margin-left: 500px;
+            font-size: 50px;
+            color: rgb(237, 241, 242);
+        }
+    </style>
+    <script>
+        function validation()
+        {
+            var x=document.forms["myForm"]["myname"].value;
+            if(x=="")
+            {
+                alert("Enter your name");
+                return false;
+            }
+            var y=document.forms["myForm"]["myage"].value;
+            if(y<0||y>150)
+            {
+                alert("Enter your valid age");
+                return false;
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <div class="home">
+        <div><a href="1_PROJECT.html" style="color: rgb(247, 250, 251);">Home</a></div>
+    </div>
+    <h1>Admission Form</h1>
+    <form name="myForm" action="backend.php" oninput="return validation()">
+        <div style="font: larger; font-weight: bolder; color: rgb(236, 241, 241); ">
+           Name: <span style="margin: 20px;"><input type="text" name="myname" id="name"></span>
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(239, 244, 244);">
+           Age:  <span style="margin: 30px;"> <input type="text" name="myage" id="age"><p id="age1"></p></span>
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(244, 248, 249);">
+           Gender: <br> Male <input type="radio" name="mygender" id="r1">  Female <input type="radio" name="mygender" id="r2">
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(245, 247, 248);">
+           Address: <br> <textarea name="mytext" id="t1" cols="30" rows="10"></textarea>
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(247, 248, 248);">
+           D.O.B: <input type="date" name="mybirth" id="date">
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(247, 249, 249);">
+            <label for="cars">Select Semester:</label>
+  <select id="sem" name="sem">
+    <option value="0">None</option>
+    <option value="1">Semester 1</option>
+    <option value="2">Semester 2</option>
+    <option value="3">Semester 3</option>
+    <option value="4">Semester 4</option>
+    <option value="5">Semester 5</option>
+    <option value="6">Semester 6</option>
+    <option value="7">Semester 7</option>
+    <option value="8">Semester 8</option>
+  </select>
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(0, 236, 253);">
+            <label for="cars">Select Branch:</label>
+  <select id="branch" name="branch">
+    <option value="0">None</option>
+    <option value="1">Computer Engineering</option>
+    <option value="2">Information Technology</option>
+    <option value="3">Mechanical Engineering</option>
+    <option value="4">Electrical Engineering</option>
+    <option value="5">Civil Engineering</option>
+    <option value="6">Production Engineering</option>
+    <option value="7">Electronics and Communication Engineering</option>
+    
+  </select>
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(240, 243, 244);">
+           Upload Paid Fee Reciept: <input type="file">
+        </div><br>
+        <div style="font: larger; font-weight: bolder; color: rgb(241, 245, 245);">
+            <input type="submit" value="Submit" onclick="alert('Form Submitted Successfully')">
+            <input type="reset" value="Reset">
+        </div>
+        
+    </form>
+    
+</body>
+</html>
