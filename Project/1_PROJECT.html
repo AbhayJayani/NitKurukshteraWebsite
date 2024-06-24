@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>NIT KURUKSHETRA</title>
+    <style>
+        body {
+            background-image: url('back2.jpg');
+           
+            background-size: 100% 700px;
+            background-attachment: fixed;
+        }
+
+        #symbol {
+            text-align: center;
+
+        }
+
+        #name {
+            text-align: center;
+            font-size: 50px;
+            color: rgb(248, 244, 247);
+        }
+
+        .flex-container {
+            display: flex;
+
+        }
+
+        .flex-container>div {
+            border: 3px solid white;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 5px 30px;
+            font-size: 15px;
+            font-weight: 900;
+            color: rgb(255, 0, 242);
+            display: flex;
+            flex-direction: row;
+        }
+        .flex-container>div:hover
+        {
+            background-color: purple;
+            
+        }
+        .test {
+            height: 380px;
+            width: 651px;
+            position: absolute;
+        }
+
+        .wrap
+        {
+            display: flex;
+        }
+
+        .wrap>div {
+            border: 3px solid white;
+            margin: 5px;
+            width: 723px;
+            height: 380px;
+            display: flex;
+            flex-direction: row;
+            
+        }
+        p
+        {
+            color: rgb(248, 246, 248);
+        }
+
+        .reward
+        {
+            display: flex;
+        }
+        .reward>div
+        {
+            border: 3px solid white;
+            width: 100%;
+            height: 200px;
+            margin: 50px;
+            margin-left: 280px;
+            margin-right: 280px;
+        }
+        .reward>div:hover
+        {
+            background-color: rgb(248, 244, 248);
+        }
+       
+    </style>
+
+</head>
+
+<body>
+    <div id="symbol"><img src="nit.png" alt="" height="100px" width="100px" /></div>
+    <div id="name">National Institue of Technology Kurukshetra</div>
+    <div id="name" style="font-size: 20px;">Institution of National Importance</div>
+    <hr style="color: white;">
+    <marquee direction="left" style="color: rgb(245, 240, 245); font-weight: bolder; ">
+        WELCOME TO THE WEBSITE OF NIT KURUKSHETRA.
+    </marquee>
+    <hr style="color: white;">
+    <div class="flex-container">
+        <div><a href="1_PROJECT.html" style="color: rgb(246, 243, 245); padding-left: 35px; padding-right: 35px;">Home</a></div>
+        <div><a href="2_institute.html" style="color: rgb(247, 242, 246); padding-left: 30px; padding-right: 30px;">Institue</a></div>
+        <div><a href="3_academics.html" style="color: rgb(246, 241, 246); padding-left: 25px; padding-right: 25px;" >Academics</a></div>
+        <div><a href="4_departments.html" style="color: rgb(249, 246, 248); padding-left: 15px; padding-right: 15px;">Departments</a></div>
+        <div><a href="5_activities.html" style="color: rgb(247, 243, 247);">Students Activities</a></div>
+        <div><a href="6_forms.html" style="color: rgb(249, 247, 249);">Admission Forms</a></div>
+    </div>
+
+
+
+    <div class="wrap">
+        <div id="imageBox">
+            <img src="nit1.png" class="test" />
+            <img src="nit2.jpeg" class="test" />
+            <img src="nit3.jpeg" class="test" />
+            <img src="nit4.jpg" class="test" />
+        </div>
+        <div  id="notify">
+            <p style="font-weight: bolder; font-size: 25px;">Anouncements</p>
+        
+        <div id="para">
+            <marquee behavior="scroll" direction="up" height="350px">
+            <p>First merit List MBA Admission 2021-23</p>
+            <p>Provisional Re-Appear cut list of Internal & External Re-Appear Examinations (MayJune-2021) [Phase-XIII]</p>
+            <p>MAKE UP TEST SCHEDULE FOR B.TECH. 2nd SEMESTER 2020-21 (NEW SCHEME) ELECTRICAL</p>
+            <p>Notification and time slots for Mid Semester Exam-II of MCA 2nd Semester for MayJune-2020-21</p>
+            <p>MBA Admissions 2021 List of Eligible Candidate for Online Interviews(re-uploaded)</p>
+            <p>Final Allotment of Open Elective (OE) course in 7th semester of B.Tech Programs AY 2021-22</p>
+            <p>Date Sheet for Theory Examinations of B.Tech. 1st Year for June-2021</p>
+            <p>Notification dated 31.05.2021 regarding closure of Institute till 15.06.2021</p>
+            <p>Tentative Allotment of Open Elective (OE) Course in 7th Semester of B.Tech Programmes 
+                ( Civil, ECE,Computer, IT) during Academic Year 2021-22 
+                [ Including students of IIIT Sonepat of 2018 and 2017 Batches] 
+                [ Last date for removal of discrepancy in Open Elective allotment is upto 05:00 pm, 31.05.2021 (Monday)</p>
+            <p>B.Tech. 2nd sem Mid_sem 2 electrical</p>
+            </marquee>
+        </div>
+        </div>
+    </div>
+
+    <div class="reward">
+        
+    </div>
+
+    <script>
+        startImageTransition();
+
+        function startImageTransition() {
+            var images = document.getElementsByClassName("test");
+            for (var i = 0; i < images.length; ++i) {
+                images[i].style.opacity = 1;
+            }
+            var top = 1;
+            var cur = images.length - 1;
+            setInterval(changeImage, 3000);
+            async function changeImage() {
+                var nextImage = (1 + cur) % images.length;
+                images[cur].style.zIndex = top + 1;
+                images[nextImage].style.zIndex = top;
+                await transition();
+                images[cur].style.zIndex = top;
+                images[nextImage].style.zIndex = top + 1;
+                top = top + 1;
+                images[cur].style.opacity = 1;
+                cur = nextImage;
+            }
+            function transition() {
+                return new Promise(function (resolve, reject) {
+                    var del = 0.01;
+                    var id = setInterval(changeOpacity, 10);
+                    function changeOpacity() {
+                        images[cur].style.opacity -= del;
+                        if (images[cur].style.opacity <= 0) {
+                            clearInterval(id);
+                            resolve();
+                        }
+                    }
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>
